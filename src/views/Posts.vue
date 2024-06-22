@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <h1>Postingan Pengguna</h1>
+    <center><h3>Postingan Pengguna</h3>
     <select v-model="selectedUser" @change="fetchPosts">
       <option v-for="user in users" :value="user.id" :key="user.id">{{ user.name }}</option>
     </select>
@@ -8,9 +8,9 @@
       <span class="loading-message">Loading posts...</span>
     </div>
     <div v-for="post in posts" :key="post.id">
-      <h3>{{ post.title }}</h3>
+      <h4>{{ post.title }}</h4>
       <p>{{ post.body }}</p>
-    </div>
+    </div></center>
   </div>
 </template>
 
@@ -73,18 +73,12 @@ watch(selectedUser, () => {
 fetchUser();
 </script>
 
-<style >
-.loading-message {
-  font-style: italic;
-  color: grey;
-}
-
+<style sc>
 .posts{
   max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
 }
-
 </style>
